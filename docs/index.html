@@ -10,6 +10,9 @@
                 console.log("LIFF INIT")
                 liff.init({liffId: "1654217489-pKGnXXkn"}).then(() => {
                     console.log("LIFF INIT SUCCESS")
+                    if (!liff.isLoggedIn()) {
+                        liff.login()
+                    }
                 }).catch(e => {
                     console.error("LIFF INIT FAILED", e)
                 })
@@ -35,7 +38,7 @@
                     },
                     authorization: {
                         clientId: "dj00aiZpPVZxTnFwbWtLWG5JYiZzPWNvbnN1bWVyc2VjcmV0Jng9OGI-",    // 登録したClient IDを入力してください
-                        redirectUri: "https://github.com/pages/manyhotcakes/LIFF_YAHOO/index.html", // 本スクリプトを埋め込むページのURLを入力してください
+                        redirectUri: "https://manyhotcakes.github.io/LIFF_YAHOO/", // 本スクリプトを埋め込むページのURLを入力してください
                         scope: "openid",
                         windowWidth: "500",
                         windowHeight: "400"
