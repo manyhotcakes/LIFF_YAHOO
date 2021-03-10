@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LIFF Starter</title>
+        <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+        <script>
+            window.onload = () => {
+                console.log("LIFF INIT")
+                liff.init({liffId: "1654217489-pKGnXXkn"}).then(() => {
+                    console.log("LIFF INIT SUCCESS")
+                }).catch(e => {
+                    console.error("LIFF INIT FAILED", e)
+                })
+            }
+        </script>
+    </head>
+    <body>
+        <p>Hello</p>
+        <div>
+            <span class="yconnectLogin"></span>
+
+            <script type="text/javascript">
+            window.yconnectInit = function() {
+                YAHOO.JP.yconnect.Authorization.init({
+                    button: {    // ボタンに関しては下記URLを参考に設定してください
+                                 // https://developer.yahoo.co.jp/yconnect/loginbuttons.html
+                        format: "image",
+                        type: "a",
+                        textType:"a",
+                        width: 196,
+                        height: 38,
+                        className: "yconnectLogin"
+                    },
+                    authorization: {
+                        clientId: "dj00aiZpPVZxTnFwbWtLWG5JYiZzPWNvbnN1bWVyc2VjcmV0Jng9OGI-",    // 登録したClient IDを入力してください
+                        redirectUri: "https://github.com/pages/manyhotcakes/LIFF_YAHOO/index.html", // 本スクリプトを埋め込むページのURLを入力してください
+                        scope: "openid",
+                        windowWidth: "500",
+                        windowHeight: "400"
+                    },
+                    autofill: {
+                        // 属性パラメーター: "属性情報を挿入したいフォーム要素のID名"
+                        // name: "name",
+                        // email: "email",
+                        // address: "address"
+                    },
+                    onSuccess: function(res) {
+                        // 正常時のコールバック関数
+                        // res変数に各属性情報が格納されます
+                        console.log("Y LOGGED IN")
+                        console.log(res);
+                    },
+                    onError: function(res) {
+                        // エラー発生時のコールバック関数
+                    },
+                    onCancel: function(res) {
+                        // 同意キャンセルされた時のコールバック関数
+                    }
+                });
+            };
+            (function(){
+            var fs = document.getElementsByTagName("script")[0], s = document.createElement("script");
+            s.setAttribute("src", "https://s.yimg.jp/images/login/yconnect/auth/2.0.3/auth-min.js");
+            fs.parentNode.insertBefore(s, fs);
+            })();
+            </script>
+            </div>
+    </body>
+</html>
